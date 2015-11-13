@@ -1,7 +1,7 @@
-FROM appertly/hhvm:3.10.0
+FROM appertly/hhvm:3.10.1
 MAINTAINER Jonathan Hawk <jonathan@appertly.com>
 
-ENV HHVM_DEV_VERSION 3.10.0~jessie
+ENV HHVM_DEV_VERSION 3.10.1~jessie
 
 # Install and build libbson and mongofill
 RUN mkdir /tmp/builds \
