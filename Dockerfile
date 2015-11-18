@@ -1,4 +1,4 @@
-FROM appertly/hhvm:3.10.1
+FROM appertly/hhvm:latest
 MAINTAINER Jonathan Hawk <jonathan@appertly.com>
 
 ENV HHVM_DEV_VERSION 3.10.1~jessie
