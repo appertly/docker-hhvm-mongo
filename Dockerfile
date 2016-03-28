@@ -1,14 +1,14 @@
-FROM appertly/hhvm:3.11.1
+FROM appertly/hhvm:3.12.1
 MAINTAINER Jonathan Hawk <jonathan@appertly.com>
 
-ENV HHVM_DEV_VERSION 3.11.1~trusty
+ENV HHVM_DEV_VERSION 3.12.1~trusty
 
 # Install and build libbson and mongofill
 RUN mkdir /tmp/builds \
     && buildDeps="wget git-core libtool make hhvm-dev=$HHVM_DEV_VERSION" \
     && set -x \
     && apt-get update && apt-get install -y --no-install-recommends $buildDeps \
-    && git clone git://github.com/mongodb/libbson.git /tmp/builds/libbson \
+    && git clone -b 1.2.0-dev git://github.com/mongodb/libbson.git /tmp/builds/libbson \
     && git clone https://github.com/mongofill/mongofill-hhvm /tmp/builds/mongofill-hhvm \
     && cd /tmp/builds/libbson \
     && ./autogen.sh \
